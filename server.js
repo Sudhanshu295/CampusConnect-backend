@@ -13,7 +13,8 @@ app.use(cors({ origin: 'https://campus-connect-frontend-tawny.vercel.app', crede
 app.use(express.json());
 
 // MongoDB connection
-const MONGO_URI = process.env.MONGO_URI || 'mongodb+srv://jhasudhanshu913_db_user:xUETM5IjTq0S8C0g@cluster0.zcfhnpa.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0';
+const MONGO_URI = process.env.MONGO_URI || 'mongodb+srv://jhasudhanshu913_db_user:xUETM5IjTq0S8C0g@cluster0.zcfhnpa.mongodb.net/campusconnect?retryWrites=true&w=majority&ssl=true';
+
 mongoose.connect(MONGO_URI)
   .then(() => console.log('MongoDB connected'))
   .catch(err => console.error('MongoDB connection error:', err));
