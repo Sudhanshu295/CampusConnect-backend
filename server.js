@@ -9,7 +9,11 @@ const bcrypt = require('bcrypt');
 const app = express();
 
 // Use CORS only from frontend (dev)
-app.use(cors({ origin: 'https://campus-connect-frontend-tawny.vercel.app', credentials: true }));
+const allowedOrigins = [
+  'http://localhost:3000',
+  'https://campus-connect-frontend-tawny.vercel.app'
+];
+app.use(cors({ origin: allowedOrigins, credentials: true }));
 app.use(express.json());
 
 // MongoDB connection
